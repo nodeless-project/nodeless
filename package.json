@@ -1,0 +1,10 @@
+{
+  "name": "minion",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Christoph-Thomas Abs",
+  "bin": {
+    "minion": "./index.js"
+  }
+}
