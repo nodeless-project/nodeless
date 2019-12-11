@@ -5,6 +5,11 @@
   "license": "MIT",
   "author": "Christoph-Thomas Abs",
   "bin": {
-    "minion": "./index.js"
+    "minions": "./index.js"
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "^4.0.1"
   }
 }
