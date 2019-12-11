@@ -1,15 +1,17 @@
 {
-  "name": "minion",
+  "name": "minionjs",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "author": "Christoph-Thomas Abs",
   "bin": {
-    "minions": "./index.js"
+    "minionjs": "./index.js"
   },
   "dependencies": {
+    "cli-progress": "^3.4.0",
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
-    "commander": "^4.0.1"
+    "commander": "^4.0.1",
+    "download-git-repo": "^3.0.2"
   }
 }
