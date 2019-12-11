@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+var exec = require('child_process').exec;
 /*
     @author Christoph-Thomas Abs
     commnands:
@@ -24,9 +24,7 @@ function createDirectoryContents(templatePath, projectName) {
         const origFilePath = `${templatePath}/${file}`;
         const stats = fs.statSync(origFilePath);        
         if (stats.isFile()) {
-            const contents = fs.readFileSync(origFilePath, 'utf8');
-            contents.replace(/%project%/g, projectName);
-
+            const contents = fs.readFileSync(origFilePath, 'utf8').replace(/\%project\%/g, projectName);
             const writePath = `${CURR_DIR}/${projectName}/${file}`;
             fs.writeFileSync(writePath, contents, 'utf8');
         }
@@ -42,15 +40,19 @@ program
     const progess = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic); 
     progess.start(100, 0);
     try {
-        const templatePath = `${CLONE_PATH}/template/func/typescript`;
+        const templatePath = `${CLONE_PATH}/templates/func/typescript`;
         await new Promise((resolve, reject) => gitDownloader('github:Abrax20/minions', CLONE_PATH, {}, err => err ? reject(err) : resolve()))
-        progess.update(40);
-
+        progess.update(20);
         fs.mkdirSync(`${CURR_DIR}/${funcName}`);
-         progess.update(60);
+         progess.update(40);
         createDirectoryContents(templatePath, funcName);
+        progess.update(60);
+        exec(`cd ${funcName} && npm i`);
         progess.update(80);
 
+        exec(`rm -fr ${CLONE_PATH}`);
+
+        progess.update(100);
         progess.stop();
     } catch (err) {
         progess.stop();
