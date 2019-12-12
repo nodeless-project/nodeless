@@ -1,0 +1,10 @@
+{
+    "name": "@minionjs/worker",
+    "version": "1.0.0",
+    "license": "MIT",
+    "author": "Christoph-Thomas Abs",
+    "dependencies": {
+        "@types/node": "^12.12.17",
+        "amqplib": "^0.5.5"
+    }
+}

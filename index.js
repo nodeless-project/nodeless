@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-var exec = require('child_process').exec;
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 /*
     @author Christoph-Thomas Abs
     commnands:
@@ -47,10 +48,10 @@ program
          progess.update(40);
         createDirectoryContents(templatePath, funcName);
         progess.update(60);
-        exec(`cd ${funcName} && npm i`);
+        await exec(`cd ${funcName} && npm i`);
         progess.update(80);
 
-        exec(`rm -fr ${CLONE_PATH}`);
+        await exec(`rm -fr ${CLONE_PATH}`);
 
         progess.update(100);
         progess.stop();
