@@ -1,22 +1,36 @@
 {
-  "name": "@nodeless/cli",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "nodeless",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint --fix . --ext .ts",
+    "compile": "lerna run tsc --parallel",
+    "postinstall": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.8",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "jenkins-mocha": "^8.0.0",
+    "lerna": "^3.16.3",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "typescript": "3.7.3"
+  },
   "repository": {
     "type" : "git",
     "url" : "https://github.com/abrax20/nodeless.git"
-  },  
-  "author": "Christoph-Thomas Abs",
-  "bin": {
-    "minionjs": "./index.js"
   },
-  "keywords": ["node", "serverless", "less", "npm", "express"],
-  "dependencies": {
-    "cli-progress": "^3.4.0",
-    "co": "^4.6.0",
-    "co-prompt": "^1.0.0",
-    "commander": "^4.0.1",
-    "download-git-repo": "^3.0.2"
-  }
+  "workspaces": [
+    "packages/*"
+  ]
 }

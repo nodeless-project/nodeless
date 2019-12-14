@@ -16,7 +16,7 @@ const cliProgress = require('cli-progress');
 const gitDownloader = require('download-git-repo');
 
 const CURR_DIR = process.cwd();
-const CLONE_PATH = '/tmp/com.minionjs.templates';
+const CLONE_PATH = '/tmp/com.nodeless.templates';
 
 function createDirectoryContents(templatePath, projectName) {
     const filesToCreate = fs.readdirSync(templatePath);
@@ -42,7 +42,7 @@ program
     progess.start(100, 0);
     try {
         const templatePath = `${CLONE_PATH}/templates/func/typescript`;
-        await new Promise((resolve, reject) => gitDownloader('github:Abrax20/minions', CLONE_PATH, {}, err => err ? reject(err) : resolve()))
+        await new Promise((resolve, reject) => gitDownloader('github:Abrax20/nodeless', CLONE_PATH, {}, err => err ? reject(err) : resolve()))
         progess.update(20);
         fs.mkdirSync(`${CURR_DIR}/${funcName}`);
          progess.update(40);

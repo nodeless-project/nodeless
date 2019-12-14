@@ -1,0 +1,25 @@
+{
+    "private": true,
+    "name": "@minionjs/worker",
+    "version": "1.0.0",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "author": "Christoph-Thomas Abs <christoph.abs@visit4.me>",
+    "repository": {
+        "type" : "git",
+        "url" : "https://github.com/abrax20/nodeless.git"
+    },
+    "scripts": {
+        "tsc": "tsc",
+        "watch": "nodemon -e ts -w ../ -x yarn start",
+        "start": "TS_NODE_FILES=true ts-node server.ts",
+        "test": "echo \"Error: run tests from root\" && exit 0",
+        "test-ci": "yarn test"
+    },
+    "dependencies": {
+        "@nodeless/util": "1.0.0",
+        "@types/node": "^12.12.17",
+        "amqplib": "^0.5.5",
+        "mongoose": "^5.8.1"
+    }
+}
