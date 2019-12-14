@@ -6,8 +6,8 @@
     "main": "lib/index.js",
     "author": "Christoph-Thomas Abs <christoph.abs@visit4.me>",
     "repository": {
-        "type" : "git",
-        "url" : "https://github.com/abrax20/nodeless.git"
+        "type": "git",
+        "url": "https://github.com/abrax20/nodeless.git"
     },
     "scripts": {
         "tsc": "tsc",
@@ -20,6 +20,7 @@
         "@nodeless/util": "1.0.0",
         "@types/node": "^12.12.17",
         "amqplib": "^0.5.5",
-        "mongoose": "^5.8.1"
+        "mongoose": "^5.8.1",
+        "vm2": "^3.8.4"
     }
 }

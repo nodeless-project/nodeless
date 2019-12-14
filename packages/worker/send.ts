@@ -1,8 +1,9 @@
 import amqp from 'amqplib/callback_api';
 
+const queue = 'nodeless-functions';
 const CONN_URL = 'amqp://localhost';
-let ch = null;
 
+let ch = null;
 function sleep(ms) {
    return new Promise(resolve => {
       setTimeout(resolve, ms)
@@ -19,10 +20,7 @@ amqp.connect(CONN_URL, async (err, conn) => {
 
     while(true) {
        const time = new Date().getTime();
-       publishToQueue('user-messages', JSON.stringify({ time }));
-       publishToQueue('user-messages', JSON.stringify({ time: time+1 }));
-       publishToQueue('user-messages', JSON.stringify({ time: time+2 }));
-       publishToQueue('user-messages', JSON.stringify({ time: time+3 }));
+       publishToQueue(queue, JSON.stringify({ functionId: "5df510cfd509136bb630fdcf" }));
        await sleep(4000);
     }
    });
