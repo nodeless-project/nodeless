@@ -1,8 +1,5 @@
 import amqp from 'amqplib';
-
-import util from 'util';
 import { NodeVM } from 'vm2';
-
 import { createMongoDBConnection, Func, isObjectId } from '@nodeless/util';
 
 const CONN_URL = 'amqp://localhost';
@@ -21,12 +18,12 @@ function parseQueueMessage(data: Buffer): { functionId: string; params: any } {
 
 (async () => {
     try {
-        const mongoose = await createMongoDBConnection('mongodb://localhost/nodeless');
+        await createMongoDBConnection('mongodb://localhost/nodeless');
         const conn = await amqp.connect(CONN_URL);
         const channel = await conn.createChannel();
         channel.prefetch(1);
 
-        await channel.assertQueue(queue);
+        await channel.assertQueue(queue, { durable: false });
         channel.consume(queue, async msg => {
             try {
                 const { functionId: _id, params } = parseQueueMessage(msg.content);
@@ -40,7 +37,10 @@ function parseQueueMessage(data: Buffer): { functionId: string; params: any } {
                 });
 
                 const { default: worker } = vm.run(func.code);
-                worker(params);
+
+                const result = worker(params);
+                const data = JSON.stringify(result) || '';
+                channel.sendToQueue(msg.properties.replyTo, Buffer.from(data), { correlationId: msg.properties.correlationId });
             } catch (err) {
                 console.error(err);
             }
