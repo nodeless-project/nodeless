@@ -1,6 +1,6 @@
 {
   "name": "@nodeless/manager",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "The nodless manager is api service for managing your nodeless infrastructur",
   "main": "dist/server.js",
   "repository": "https://github.com/Abrax20/nodeless",
@@ -15,7 +15,7 @@
     "test-ci": "yarn test"
   },
   "dependencies": {
-    "@nodeless/util": "1.0.0",
+    "@nodeless/util": "0.0.1",
     "express": "^4.17.1",
     "cors": "^2.8.5",
     "morgan": "^1.9.1",
