@@ -1,28 +1,47 @@
 {
+  "private": true,
   "name": "@nodeless/cli",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "author": "Christoph-Thomas Abs <christoph.abs@visit4.me>",
+  "contributors": [
+    "Paul Spende <paul.spende@gmail.com>"
+  ],
+  "scripts": {
+    "start": "nodemon --exec ts-node -- index.ts",
+    "ts-node": "ts-node index.ts",
+    "build": "tsc"
+  },
   "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/abrax20/nodeless.git"
   },
-  "author": "Christoph-Thomas Abs",
   "bin": {
-    "nodeless": "./index.js"
+    "nodeless": "./dist/index.js"
   },
   "keywords": [
     "node",
     "serverless",
     "less",
     "npm",
-    "express"
+    "express",
+    "cli",
+    "functionbase",
+    "backend",
+    "api",
+    "worker"
   ],
   "dependencies": {
+    "@nodeless/util": "file:../util",
     "cli-progress": "^3.4.0",
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
     "commander": "^4.0.1",
-    "download-git-repo": "^3.0.2"
+    "download-git-repo": "^3.0.2",
+    "typescript": "^3.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.17"
   }
 }

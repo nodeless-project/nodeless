@@ -1,6 +1,18 @@
 {
-  "name": "nodeless",
   "private": true,
+  "name": "nodeless",
+  "description": "Nodeless is a framework for a nodejs function based backend infrastructure",
+  "version": "0.0.1",
+  "author": {
+    "name": "Christopher Abs",
+    "email": "flavio@flaviocopes.com"
+  },
+  "contributors": [
+    {
+      "name": "Paul Spende",
+      "email": "paul.spende@gmail.com"
+    }
+  ],
   "scripts": {
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint --fix . --ext .ts",
