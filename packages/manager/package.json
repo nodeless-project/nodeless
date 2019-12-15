@@ -20,6 +20,7 @@
     "cors": "^2.8.5",
     "morgan": "^1.9.1",
     "helmet": "^3.21.2",
-    "compression": "^1.7.4"
+    "compression": "^1.7.4",
+    "express-validator": "^6.3.0"
   }
 }
