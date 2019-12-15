@@ -9,7 +9,7 @@ export const FuncSchema = new Schema(
         code: {
             type: String,
             required: true,
-        }
+        },
     },
     { timestamps: true },
 );

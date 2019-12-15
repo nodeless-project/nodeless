@@ -2,9 +2,7 @@ import mongoose from 'mongoose';
 
 mongoose.Promise = Promise;
 
-mongoose.connection.on('connected', () =>
-    console.log('Connected to Database successfully'),
-);
+mongoose.connection.on('connected', () => console.log('Connected to Database successfully'));
 
 export async function createMongoDBConnection(mongodbURI: string): Promise<void> {
     try {
