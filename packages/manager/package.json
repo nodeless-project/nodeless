@@ -1,0 +1,25 @@
+{
+  "name": "@nodeless/manager",
+  "version": "1.0.0",
+  "description": "The nodless manager is api service for managing your nodeless infrastructur",
+  "main": "dist/server.js",
+  "repository": "https://github.com/Abrax20/nodeless",
+  "author": "Christoph-Thomas Abs",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "watch": "nodemon -e ts -w ../ -x yarn start",
+    "start": "TS_NODE_FILES=true ts-node server.ts",
+    "test": "echo \"Error: run tests from root\" && exit 0",
+    "test-ci": "yarn test"
+  },
+  "dependencies": {
+    "@nodeless/util": "1.0.0",
+    "express": "^4.17.1",
+    "cors": "^2.8.5",
+    "morgan": "^1.9.1",
+    "helmet": "^3.21.2",
+    "compression": "^1.7.4"
+  }
+}
