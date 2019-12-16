@@ -14,10 +14,10 @@
     }
   ],
   "scripts": {
+    "postinstall": "yarn compile",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint --fix . --ext .ts",
-    "compile": "lerna run tsc --parallel",
-    "postinstall": "lerna bootstrap"
+    "compile": "lerna run build --parallel"
   },
   "devDependencies": {
     "@types/node": "^12.6.8",

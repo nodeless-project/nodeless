@@ -7,9 +7,8 @@
     "Paul Spende <paul.spende@gmail.com>"
   ],
   "scripts": {
-    "start": "nodemon --exec ts-node -- index.ts",
-    "ts-node": "ts-node index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "nodemon --exec ts-node -- index.ts"
   },
   "main": "./dist/index.js",
   "license": "MIT",
@@ -33,7 +32,7 @@
     "worker"
   ],
   "dependencies": {
-    "@nodeless/util": "file:../util",
+    "@nodeless/util": "file:../util/dist",
     "cli-progress": "^3.4.0",
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",

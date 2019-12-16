@@ -10,10 +10,9 @@
   "license": "ISC",
   "main": "./dist/index.js",
   "scripts": {
-    "tsc": "tsc",
+    "build": "tsc",
     "test": "echo \"Error: run tests from root\" && exit 0",
-    "test-ci": "yarn test",
-    "build": "yarn tsc"
+    "test-ci": "yarn test"
   },
   "dependencies": {
     "mongoose": "5.8.1"
