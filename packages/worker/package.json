@@ -20,7 +20,7 @@
         "test-ci": "yarn test"
     },
     "dependencies": {
-        "@nodeless/util": "0.0.1",
+        "@nodeless/util": "file:../util/dist",
         "@types/node": "^12.12.17",
         "amqplib": "^0.5.5",
         "mongoose": "^5.8.1",
