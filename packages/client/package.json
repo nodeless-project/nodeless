@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "@nodeless/client",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Christoph-Thomas Abs <christoph.abs@visit4.me>",
+  "contributors": [
+    "Paul Spende <paul.spende@gmail.com>"
+  ],
+  "license": "ISC",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: run tests from root\" && exit 0",
+    "test-ci": "yarn test"
+  },
+  "dependencies": {
+    "@nodeless/util": "file:../util/dist",
+    "@types/node": "^12.12.17",
+    "amqplib": "^0.5.5"
+  },
+  "devDependencies": {
+    "ts-loader": "^6.2.1"
+  }
+}
