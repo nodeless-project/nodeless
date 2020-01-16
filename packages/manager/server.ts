@@ -3,14 +3,21 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import express from 'express';
 import compression from 'compression';
+import { Nodeless } from '@nodeless/client';
 import { createErrorResponse } from './src/messages';
 
 import routes from './src/routes';
-import { PORT, BASE_PATH, LOG_TYPE, MONGODB_URI } from './src/constants';
+import { PORT, BASE_PATH, LOG_TYPE, MONGODB_URI, NODELESS_URI } from './src/constants';
 import { createMongoDBConnection } from '@nodeless/util';
 
 (async (): Promise<void> => {
   const app = express();
+
+  const nodeless = await Nodeless.init(NODELESS_URI);
+  app.use((req, res, next) => {
+    req.nodeless = nodeless;
+    next();
+  });
 
   // Middlewares
   app.use(helmet());

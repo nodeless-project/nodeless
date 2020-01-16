@@ -7,8 +7,9 @@ const ON_MESSAGE_EVENT = 'ON_MESSAGE';
 
 export class Nodeless {
   private channel: any;
-  private privateQueue: any;
   private connection: any;
+  private privateQueue: any;
+  private static nodeless: Nodeless;
   private settings: NodelessSettings;
   private events = new EventEmitter();
 
@@ -17,9 +18,10 @@ export class Nodeless {
   }
 
   public static async init(connectionURL: string, options: NodelessSettingsType = {}): Promise<Nodeless> {
-    const nodeless = new Nodeless(connectionURL, options);
-    await nodeless.connect();
-    return nodeless;
+    if (this.nodeless) return this.nodeless;
+    this.nodeless = new Nodeless(connectionURL, options);
+    await this.nodeless.connect();
+    return this.nodeless;
   }
 
   public async connect(): Promise<void> {

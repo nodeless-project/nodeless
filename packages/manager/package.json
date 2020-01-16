@@ -15,6 +15,7 @@
     "test-ci": "yarn test"
   },
   "dependencies": {
+    "@nodeless/client": "file:../client/dist",
     "@nodeless/util": "file:../util/dist",
     "express": "^4.17.1",
     "cors": "^2.8.5",
