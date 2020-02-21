@@ -5,7 +5,7 @@ import { compareCorrelationIdInMessage, generateUUID, getFunctionAction } from '
 
 const ON_MESSAGE_EVENT = 'ON_MESSAGE';
 
-export class Nodeless {
+export default class Nodeless {
   private channel: any;
   private connection: any;
   private privateQueue: any;
