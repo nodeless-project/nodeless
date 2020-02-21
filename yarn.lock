@@ -835,10 +835,11 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nodeless/util@file:packages/util":
-  version "0.0.1"
-  dependencies:
-    mongoose "5.8.1"
+"@nodeless/client@file:packages/client/dist":
+  version "0.0.0"
+
+"@nodeless/util@file:packages/util/dist":
+  version "0.0.0"
 
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
