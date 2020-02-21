@@ -1,1 +1,0 @@
-{"version":3,"file":"createSuccessResponse.js","sourceRoot":"","sources":["../../../src/messages/createSuccessResponse.ts"],"names":[],"mappings":";;AAEA,SAAgB,qBAAqB,CAAC,GAAa,EAAE,IAAI,GAAG,EAAE;IAC5D,GAAG,CAAC,MAAM,CAAC,GAAG,CAAC,CAAC,IAAI,CAAC;QACnB,OAAO,EAAE,IAAI;QACb,IAAI;KACL,CAAC,CAAC;AACL,CAAC;AALD,sDAKC"}
